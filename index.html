@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reha · Coaching sportif</title>
+<meta name="description" content="Reha, l'application de coaching musculation entre un coach et ses coachés.">
+<style>
+  /* Identité Reha : nuit verte + émeraude. */
+  :root {
+    --bg: #050F0D;
+    --bg-aurora1: rgba(77, 223, 184, 0.16);
+    --bg-aurora2: rgba(18, 214, 160, 0.08);
+    --text: #E7E9EA;
+    --text-2: #9BA3AC;
+    --border: rgba(255, 255, 255, 0.14);
+    --accent: #12D6A0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(640px 420px at 12% -8%, var(--bg-aurora1), transparent 65%),
+      radial-gradient(720px 480px at 100% 4%, var(--bg-aurora2), transparent 70%),
+      var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 22px;
+  }
+  .card { max-width: 460px; text-align: center; }
+  .dino { width: 132px; height: auto; margin-bottom: 18px; }
+  .kicker { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: 2px; }
+  h1 { font-size: 40px; font-weight: 800; letter-spacing: -0.6px; margin: 8px 0 10px; }
+  p { color: var(--text-2); font-size: 16px; line-height: 1.6; margin: 0 0 28px; }
+  a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; }
+  footer { margin-top: 34px; padding-top: 16px; border-top: 1px solid var(--border); color: var(--text-2); font-size: 13.5px; }
+  footer a { margin: 0 8px; }
+</style>
+</head>
+<body>
+  <main class="card">
+    <img class="dino" src="dino.png" alt="Le dino Reha, mascotte de l'application">
+    <div class="kicker">REHA · COACHING SPORTIF</div>
+    <h1>Reha</h1>
+    <p>L'application qui relie un coach et ses coachés : programmes, séances, suivi des charges et messagerie. Bientôt disponible.</p>
+    <footer>
+      <a href="politique-confidentialite.html">Politique de confidentialité</a>
+      <a href="mailto:contact@reha.coach">contact@reha.coach</a>
+    </footer>
+  </main>
+</body>
+</html>
