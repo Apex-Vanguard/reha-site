@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rejoindre ton coach · Reha</title>
+<meta name="description" content="Ton coach t'invite sur Reha, l'application de coaching musculation.">
+<meta name="robots" content="noindex">
+<style>
+  /* Même identité que la page d'accueil : nuit verte + émeraude. */
+  :root {
+    --bg: #050F0D;
+    --bg-aurora1: rgba(77, 223, 184, 0.16);
+    --bg-aurora2: rgba(18, 214, 160, 0.08);
+    --text: #E7E9EA;
+    --text-2: #9BA3AC;
+    --card: rgba(21, 23, 26, 0.52);
+    --border: rgba(255, 255, 255, 0.14);
+    --accent: #12D6A0;
+    --on-accent: #0B0C0E;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(640px 420px at 12% -8%, var(--bg-aurora1), transparent 65%),
+      radial-gradient(720px 480px at 100% 4%, var(--bg-aurora2), transparent 70%),
+      var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 22px;
+  }
+  main { width: 100%; max-width: 420px; text-align: center; }
+  .dino { width: 96px; height: auto; margin-bottom: 14px; }
+  .kicker { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: 2px; }
+  h1 { font-size: 28px; line-height: 1.2; font-weight: 800; margin: 8px 0 10px; }
+  .sous { color: var(--text-2); font-size: 15px; line-height: 1.5; margin: 0 0 24px; }
+  .carte {
+    text-align: left; background: var(--card); border: 1px solid var(--border);
+    border-radius: 22px; padding: 18px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .etape { display: flex; gap: 12px; align-items: center; font-size: 15px; }
+  .num {
+    flex: none; width: 26px; height: 26px; border-radius: 13px; background: var(--accent);
+    color: var(--on-accent); font-size: 14px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .stores { display: flex; gap: 10px; }
+  .store {
+    flex: 1; text-align: center; padding: 11px; border-radius: 12px; font-size: 14px; font-weight: 700;
+    background: rgba(255, 255, 255, 0.09); border: 1px solid var(--border); color: var(--text-2);
+  }
+  .code { align-self: center; font-size: 30px; font-weight: 800; letter-spacing: 6px; }
+  .aide { color: var(--text-2); font-size: 13px; line-height: 1.5; margin: 0; }
+  footer { margin-top: 28px; color: var(--text-2); font-size: 13px; }
+  a { color: var(--accent); font-weight: 600; text-decoration: none; }
+</style>
+</head>
+<body>
+  <main>
+    <img class="dino" src="../dino.png" alt="Le dino Reha, mascotte de l'application">
+    <div class="kicker">REHA · COACHING SPORTIF</div>
+    <h1 id="titre">Ton coach t'invite sur Reha</h1>
+    <p class="sous">Tes programmes, tes séances et ta progression, avec ton coach.</p>
+
+    <div class="carte">
+      <div class="etape"><span class="num">1</span>Télécharge l'app Reha</div>
+      <!-- Les liens des stores seront posés à la sortie de l'app. -->
+      <div class="stores">
+        <span class="store">App Store · bientôt</span>
+        <span class="store">Google Play · bientôt</span>
+      </div>
+      <div class="etape"><span class="num">2</span>Crée ton compte avec ce code</div>
+      <div class="code" id="code">—</div>
+      <p class="aide">Tu as déjà l'app ? Ouvre-la et scanne le QR de ton coach depuis ton Profil, ou saisis ce code.</p>
+    </div>
+
+    <footer><a href="../">reha.coach</a> · <a href="mailto:contact@reha.coach">contact@reha.coach</a></footer>
+  </main>
+
+  <script>
+    // Le code arrive dans l'adresse : reha.coach/rejoindre?code=A1B2C3
+    var brut = new URLSearchParams(location.search).get('code') || '';
+    var code = brut.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 12);
+    if (code) {
+      document.getElementById('code').textContent = code;
+      // On affiche le nom du coach s'il existe (clé Supabase PUBLIQUE, faite
+      // pour être embarquée : la fonction ne renvoie que le nom du coach).
+      fetch('https://oembujliswqueosgdjtu.supabase.co/rest/v1/rpc/coach_par_code', {
+        method: 'POST',
+        headers: { 'apikey': 'sb_publishable_YpVOklV4HRWV1CUpvBukGQ_5dBJ0IRX', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ p_code: code })
+      })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (nom) {
+          if (nom) document.getElementById('titre').textContent = nom + " t'invite sur Reha";
+        })
+        .catch(function () {});
+    }
+  </script>
+</body>
+</html>
