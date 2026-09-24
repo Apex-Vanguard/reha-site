@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Supprimer mon compte · Reha</title>
+<meta name="description" content="Comment supprimer ton compte Reha et les données associées.">
+<style>
+  /* Identité Reha assumée : nuit verte + émeraude, quel que soit le thème du lecteur. */
+  :root {
+    --bg: #050F0D;
+    --bg-aurora1: rgba(77, 223, 184, 0.16);
+    --bg-aurora2: rgba(18, 214, 160, 0.08);
+    --text: #E7E9EA;
+    --text-2: #9BA3AC;
+    --card: rgba(21, 23, 26, 0.52);
+    --border: rgba(255, 255, 255, 0.14);
+    --accent: #12D6A0;
+    --on-accent: #0B0C0E;
+    --note-bg: rgba(255, 195, 0, 0.10);
+    --note-border: rgba(255, 195, 0, 0.45);
+    --note-text: #EFD289;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(640px 420px at 12% -8%, var(--bg-aurora1), transparent 65%),
+      radial-gradient(720px 480px at 100% 4%, var(--bg-aurora2), transparent 70%),
+      var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 44px 22px 80px; }
+
+  .kicker { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: 2px; }
+  h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.4px; margin: 8px 0 4px; text-wrap: balance; }
+  .meta { color: var(--text-2); font-size: 13.5px; margin: 0 0 34px; }
+
+  h2 { font-size: 19px; font-weight: 800; letter-spacing: -0.2px; margin: 38px 0 10px; text-wrap: balance; }
+  h2 .num { color: var(--accent); margin-right: 8px; font-variant-numeric: tabular-nums; }
+  p { margin: 10px 0; }
+  ul { margin: 10px 0; padding-left: 22px; }
+  li { margin: 6px 0; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 700; }
+  a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; }
+
+  .brief {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px 22px;
+    margin: 0 0 8px;
+  }
+  .brief h2 { margin-top: 2px; }
+
+  .note {
+    background: var(--note-bg);
+    border: 1px solid var(--note-border);
+    color: var(--note-text);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    margin: 0 0 30px;
+  }
+  .note strong { color: inherit; }
+
+  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-2); font-size: 13.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">REHA · COACHING SPORTIF</div>
+  <h1>Supprimer mon compte Reha</h1>
+  <p class="meta">Application Reha, éditée par la SAS Reha</p>
+
+  <div class="brief">
+    <h2>Le plus simple : depuis l'application</h2>
+    <ol>
+      <li>Ouvre Reha et va dans <strong>Profil</strong>.</li>
+      <li>Touche <strong>« Gérer mon compte »</strong>.</li>
+      <li>Touche <strong>« Supprimer mon compte »</strong> et confirme avec ton mot de passe.</li>
+    </ol>
+    <p>La suppression est <strong>immédiate et définitive</strong>.</p>
+  </div>
+
+  <h2><span class="num">1.</span>Tu n'as plus accès à l'application ?</h2>
+  <p>Écris-nous depuis l'adresse e-mail de ton compte à <a href="mailto:contact@reha.coach?subject=Suppression%20de%20mon%20compte%20Reha">contact@reha.coach</a>, objet « Suppression de mon compte Reha ». Nous supprimons le compte sous 30 jours au plus tard, et te confirmons la suppression par e-mail.</p>
+
+  <h2><span class="num">2.</span>Ce qui est supprimé</h2>
+  <ul>
+    <li>Ton profil (nom, e-mail, photo) et tes identifiants de connexion.</li>
+    <li>Tes séances réalisées, charges, ressentis, notes et mensurations.</li>
+    <li>Tes messages, ainsi que les photos et fichiers que tu as envoyés.</li>
+    <li>Pour un coach : un programme qu'un coaché suit encore lui reste accessible, en lecture seule, sans lien avec ton compte.</li>
+  </ul>
+
+  <h2><span class="num">3.</span>Ce qui peut être conservé</h2>
+  <ul>
+    <li>Des compteurs <strong>anonymes</strong> (par exemple un nombre de séances), qui ne permettent pas de t'identifier.</li>
+    <li>Les journaux techniques de sécurité de notre hébergeur, effacés automatiquement sous quelques semaines.</li>
+  </ul>
+
+  <footer>
+    Reha · <a href="https://reha.coach">reha.coach</a> · <a href="support.html">Support</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="mentions-legales.html">Mentions légales</a>
+  </footer>
+</div>
+</body>
+</html>
