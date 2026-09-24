@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mentions légales · Reha</title>
+<meta name="description" content="Mentions légales du site reha.coach et de l'application Reha.">
+<style>
+  /* Identité Reha assumée : nuit verte + émeraude, quel que soit le thème du lecteur. */
+  :root {
+    --bg: #050F0D;
+    --bg-aurora1: rgba(77, 223, 184, 0.16);
+    --bg-aurora2: rgba(18, 214, 160, 0.08);
+    --text: #E7E9EA;
+    --text-2: #9BA3AC;
+    --card: rgba(21, 23, 26, 0.52);
+    --border: rgba(255, 255, 255, 0.14);
+    --accent: #12D6A0;
+    --on-accent: #0B0C0E;
+    --note-bg: rgba(255, 195, 0, 0.10);
+    --note-border: rgba(255, 195, 0, 0.45);
+    --note-text: #EFD289;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(640px 420px at 12% -8%, var(--bg-aurora1), transparent 65%),
+      radial-gradient(720px 480px at 100% 4%, var(--bg-aurora2), transparent 70%),
+      var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 44px 22px 80px; }
+
+  .kicker { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: 2px; }
+  h1 { font-size: 30px; font-weight: 800; letter-spacing: -0.4px; margin: 8px 0 4px; text-wrap: balance; }
+  .meta { color: var(--text-2); font-size: 13.5px; margin: 0 0 34px; }
+
+  h2 { font-size: 19px; font-weight: 800; letter-spacing: -0.2px; margin: 38px 0 10px; text-wrap: balance; }
+  h2 .num { color: var(--accent); margin-right: 8px; font-variant-numeric: tabular-nums; }
+  p { margin: 10px 0; }
+  ul { margin: 10px 0; padding-left: 22px; }
+  li { margin: 6px 0; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 700; }
+  a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; }
+
+  .brief {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px 22px;
+    margin: 0 0 8px;
+  }
+  .brief h2 { margin-top: 2px; }
+
+  .note {
+    background: var(--note-bg);
+    border: 1px solid var(--note-border);
+    color: var(--note-text);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-size: 13.5px;
+    margin: 0 0 30px;
+  }
+  .note strong { color: inherit; }
+
+  footer { margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--border); color: var(--text-2); font-size: 13.5px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">REHA · COACHING SPORTIF</div>
+  <h1>Mentions légales</h1>
+  <p class="meta">Site reha.coach et application mobile Reha</p>
+
+  <h2><span class="num">1.</span>Éditeur</h2>
+  <p><strong>Reha</strong>, société par actions simplifiée (SAS) au capital de 300 €<br>
+  Siège social : 129 rue Marceau, 91120 Palaiseau<br>
+  RCS Évry 130 181 704 — EUID FR7801.130181704<br>
+  N° de TVA intracommunautaire : FR38130181704<br>
+  Contact : <a href="mailto:contact@reha.coach">contact@reha.coach</a></p>
+
+  <h2><span class="num">2.</span>Directeur de la publication</h2>
+  <p>Julien Frois, président de la société.</p>
+
+  <h2><span class="num">3.</span>Hébergement</h2>
+  <ul>
+    <li><strong>Site reha.coach</strong> : GitHub Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis — github.com.</li>
+    <li><strong>Données de l'application</strong> : Supabase Inc. (États-Unis) — données hébergées dans l'Union européenne (Francfort, Allemagne) — supabase.com.</li>
+  </ul>
+
+  <h2><span class="num">4.</span>Propriété intellectuelle</h2>
+  <p>La marque Reha, son logo, sa mascotte, le site et l'application sont la propriété de la société Reha. Toute reproduction sans autorisation écrite est interdite.</p>
+
+  <h2><span class="num">5.</span>Données personnelles</h2>
+  <p>Voir la <a href="politique-confidentialite.html">politique de confidentialité</a> et les <a href="cgu.html">conditions générales d'utilisation</a>.</p>
+
+  <footer>
+    Reha · <a href="https://reha.coach">reha.coach</a> · <a href="cgu.html">CGU</a> · <a href="politique-confidentialite.html">Confidentialité</a> · <a href="mailto:contact@reha.coach">contact@reha.coach</a>
+  </footer>
+</div>
+</body>
+</html>
