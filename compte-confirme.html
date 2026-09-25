@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Adresse confirmée · Reha</title>
+<meta name="description" content="Confirmation de ton adresse e-mail pour l'application Reha.">
+<style>
+  /* Page d'arrivée après un clic sur un lien de confirmation envoyé par Supabase
+     (inscription ou changement d'e-mail). Même identité que les autres pages. */
+  :root {
+    --bg: #050F0D;
+    --bg-aurora1: rgba(77, 223, 184, 0.16);
+    --bg-aurora2: rgba(18, 214, 160, 0.08);
+    --text: #E7E9EA;
+    --text-2: #9BA3AC;
+    --card: rgba(21, 23, 26, 0.52);
+    --border: rgba(255, 255, 255, 0.14);
+    --accent: #12D6A0;
+    --danger: #FF6B5E;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background:
+      radial-gradient(640px 420px at 12% -8%, var(--bg-aurora1), transparent 65%),
+      radial-gradient(720px 480px at 100% 4%, var(--bg-aurora2), transparent 70%),
+      var(--bg);
+    color: var(--text);
+    font-family: -apple-system, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+  .wrap { width: 100%; max-width: 520px; margin: 0 auto; padding: 40px 22px; text-align: center; }
+  .dino { width: 96px; height: auto; }
+  .kicker { color: var(--accent); font-size: 13px; font-weight: 800; letter-spacing: 2px; margin-top: 14px; }
+  h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.4px; margin: 8px 0 12px; text-wrap: balance; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 18px 22px;
+    color: var(--text-2);
+  }
+  .card strong { color: var(--text); }
+  a { color: var(--accent); font-weight: 600; text-decoration: none; }
+  .erreur h1 { color: var(--danger); }
+  #ko { display: none; }
+  .erreur #ok { display: none; }
+  .erreur #ko { display: block; }
+</style>
+</head>
+<body>
+<div class="wrap" id="page">
+  <img class="dino" src="dino.png" alt="">
+  <div class="kicker">REHA · COACHING SPORTIF</div>
+
+  <div id="ok">
+    <h1>C'est confirmé !</h1>
+    <div class="card">
+      Ton adresse e-mail est validée. <strong>Retourne dans l'application Reha</strong> et connecte-toi.
+    </div>
+  </div>
+
+  <div id="ko">
+    <h1>Lien expiré</h1>
+    <div class="card">
+      Ce lien n'est plus valable (il a déjà servi ou il est trop ancien).
+      Essaie de te connecter dans l'application : si ça ne marche pas,
+      écris-nous à <a href="mailto:contact@reha.coach">contact@reha.coach</a>.
+    </div>
+  </div>
+</div>
+<script>
+  // Supabase renvoie les erreurs dans l'adresse (#error=… ou ?error=…).
+  if (/error/.test(location.hash + location.search)) {
+    document.getElementById('page').classList.add('erreur');
+  }
+</script>
+</body>
+</html>
